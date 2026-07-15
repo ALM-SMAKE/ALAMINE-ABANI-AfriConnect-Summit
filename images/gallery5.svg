@@ -1,0 +1,113 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1035"/>
+      <stop offset="55%" stop-color="#2d1b4e"/>
+      <stop offset="100%" stop-color="#4a1f0e"/>
+    </linearGradient>
+    <radialGradient id="glow3" cx="50%" cy="20%" r="70%">
+      <stop offset="0%" stop-color="#ffe08a" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#ffb347" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ffb347" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#bg3)"/>
+  <rect width="800" height="600" fill="url(#glow3)"/>
+
+  <!-- Floor -->
+  <rect x="0" y="470" width="800" height="130" fill="#0a0416"/>
+  <ellipse cx="400" cy="472" rx="380" ry="14" fill="#000000" opacity="0.3"/>
+
+  <!-- Background row of attendee silhouettes (far, smaller, darker) -->
+  <g fill="#160c2b">
+    <path d="M40 470 L40 400 Q60 372 80 400 L80 470 Z"/>
+    <circle cx="60" cy="388" r="16"/>
+    <path d="M110 470 L110 405 Q130 378 150 405 L150 470 Z"/>
+    <circle cx="130" cy="393" r="16"/>
+    <path d="M650 470 L650 400 Q670 372 690 400 L690 470 Z"/>
+    <circle cx="670" cy="388" r="16"/>
+    <path d="M720 470 L720 405 Q740 378 760 405 L760 470 Z"/>
+    <circle cx="740" cy="393" r="16"/>
+  </g>
+
+  <!-- Mid row -->
+  <g fill="#241539">
+    <path d="M170 480 L170 395 Q193 364 216 395 L216 480 Z"/>
+    <circle cx="193" cy="380" r="19"/>
+    <path d="M580 480 L580 395 Q603 364 626 395 L626 480 Z"/>
+    <circle cx="603" cy="380" r="19"/>
+  </g>
+
+  <!-- Foreground group of 4 participants, colorful, chatting -->
+  <g>
+    <!-- person 1 -->
+    <g transform="translate(280,330)">
+      <ellipse cx="0" cy="248" rx="45" ry="10" fill="#000" opacity="0.3"/>
+      <path d="M-15 130 L-20 240 L0 240 L2 160 Z" fill="#22223b"/>
+      <path d="M15 130 L25 240 L5 240 L2 160 Z" fill="#22223b"/>
+      <path d="M-38 30 Q0 10 38 30 L44 150 Q0 172 -44 150 Z" fill="#e8590c"/>
+      <path d="M35 45 Q60 55 62 90" stroke="#e8590c" stroke-width="16" stroke-linecap="round" fill="none"/>
+      <circle cx="63" cy="94" r="9" fill="#8a5a3a"/>
+      <path d="M-35 45 Q-58 60 -55 95" stroke="#e8590c" stroke-width="16" stroke-linecap="round" fill="none"/>
+      <circle cx="-56" cy="99" r="9" fill="#8a5a3a"/>
+      <rect x="-9" y="0" width="18" height="18" fill="#8a5a3a"/>
+      <circle cx="0" cy="-14" r="24" fill="#8a5a3a"/>
+      <path d="M-24 -18 Q-22 -38 0 -40 Q22 -38 24 -18 Q20 -30 0 -30 Q-20 -30 -24 -18 Z" fill="#1c1c28"/>
+    </g>
+
+    <!-- person 2 -->
+    <g transform="translate(400,320)">
+      <ellipse cx="0" cy="258" rx="48" ry="10" fill="#000" opacity="0.3"/>
+      <path d="M-16 135 L-22 250 L0 250 L2 168 Z" fill="#1c1c28"/>
+      <path d="M16 135 L26 250 L4 250 L2 168 Z" fill="#1c1c28"/>
+      <path d="M-40 32 Q0 12 40 32 L46 158 Q0 180 -46 158 Z" fill="#2f9e44"/>
+      <path d="M38 48 Q64 40 70 12" stroke="#2f9e44" stroke-width="17" stroke-linecap="round" fill="none"/>
+      <circle cx="71" cy="8" r="9" fill="#c78b5f"/>
+      <path d="M-38 48 Q-62 62 -58 98" stroke="#2f9e44" stroke-width="17" stroke-linecap="round" fill="none"/>
+      <circle cx="-59" cy="102" r="9" fill="#c78b5f"/>
+      <rect x="-9" y="0" width="18" height="18" fill="#c78b5f"/>
+      <circle cx="0" cy="-15" r="25" fill="#c78b5f"/>
+      <path d="M-25 -12 Q-26 -40 0 -42 Q26 -40 25 -12 Q25 -25 0 -28 Q-25 -25 -25 -12 Z" fill="#0d0d0d"/>
+    </g>
+
+    <!-- person 3 -->
+    <g transform="translate(500,335)">
+      <ellipse cx="0" cy="243" rx="42" ry="9" fill="#000" opacity="0.3"/>
+      <path d="M-14 125 L-18 235 L0 235 L2 155 Z" fill="#22223b"/>
+      <path d="M14 125 L22 235 L4 235 L2 155 Z" fill="#22223b"/>
+      <path d="M-35 28 Q0 10 35 28 L40 145 Q0 166 -40 145 Z" fill="#f59f00"/>
+      <path d="M32 42 Q10 20 -10 30" stroke="#f59f00" stroke-width="15" stroke-linecap="round" fill="none"/>
+      <circle cx="-12" cy="31" r="8" fill="#8a5a3a"/>
+      <path d="M-32 42 Q-52 55 -48 88" stroke="#f59f00" stroke-width="15" stroke-linecap="round" fill="none"/>
+      <circle cx="-49" cy="92" r="8" fill="#8a5a3a"/>
+      <rect x="-8" y="0" width="16" height="16" fill="#8a5a3a"/>
+      <circle cx="0" cy="-13" r="22" fill="#8a5a3a"/>
+      <path d="M-22 -10 Q-30 -34 0 -36 Q30 -34 22 -10 Q26 6 14 8 Q20 -16 0 -18 Q-20 -16 -14 8 Q-26 6 -22 -10 Z" fill="#1c1c28"/>
+    </g>
+
+    <!-- person 4, holding a badge/phone -->
+    <g transform="translate(190,345)">
+      <ellipse cx="0" cy="228" rx="40" ry="9" fill="#000" opacity="0.3"/>
+      <path d="M-13 118 L-17 220 L0 220 L2 145 Z" fill="#1c1c28"/>
+      <path d="M13 118 L20 220 L4 220 L2 145 Z" fill="#1c1c28"/>
+      <path d="M-33 26 Q0 9 33 26 L38 136 Q0 156 -38 136 Z" fill="#7048e8"/>
+      <path d="M30 38 Q45 55 40 80" stroke="#7048e8" stroke-width="14" stroke-linecap="round" fill="none"/>
+      <circle cx="39" cy="83" r="8" fill="#c78b5f"/>
+      <rect x="30" y="76" width="16" height="10" rx="2" fill="#f8f2e7"/>
+      <path d="M-30 38 Q-48 48 -46 78" stroke="#7048e8" stroke-width="14" stroke-linecap="round" fill="none"/>
+      <circle cx="-47" cy="82" r="8" fill="#c78b5f"/>
+      <rect x="-8" y="0" width="16" height="16" fill="#c78b5f"/>
+      <circle cx="0" cy="-12" r="21" fill="#c78b5f"/>
+      <path d="M-21 -20 Q0 -35 21 -20 L21 -8 Q10 -18 0 -18 Q-10 -18 -21 -8 Z" fill="#0d0d0d"/>
+    </g>
+  </g>
+
+  <!-- Small floating badge / lanyard icons for atmosphere -->
+  <g opacity="0.85">
+    <rect x="243" y="365" width="14" height="20" rx="2" fill="#f8f2e7" stroke="#c98a12" stroke-width="1"/>
+    <rect x="443" y="358" width="14" height="20" rx="2" fill="#f8f2e7" stroke="#c98a12" stroke-width="1"/>
+  </g>
+
+  <text x="400" y="580" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#f8f2e7" font-weight="600" letter-spacing="2">PARTICIPANTS — AfriConnect</text>
+</svg>
