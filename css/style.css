@@ -1157,4 +1157,19 @@ body.dark .logos div, body.dark table, body.dark .location-info {
 }
 .show {
      display: block;
-     }
+}
+
+.error{
+    color:#dc3545;
+    font-size:.9rem;
+    margin-top:6px;
+    display:block;
+}
+
+.success{
+    color:#198754;
+    font-size:1rem;
+    font-weight:bold;
+    margin-top:20px;
+    text-align:center;
+}
