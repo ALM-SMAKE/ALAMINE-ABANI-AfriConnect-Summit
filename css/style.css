@@ -594,6 +594,14 @@ tbody tr:hover {
     margin-top: 40px;
 }
 
+.programme-table table {
+    min-width: 700px;
+}
+
+.programme-table {
+    overflow-x: auto;
+}
+
 /* INTERVENANTS */
 
 .speaker-card {
@@ -1173,3 +1181,34 @@ body.dark .logos div, body.dark table, body.dark .location-info {
     margin-top:20px;
     text-align:center;
 }
+/*  ÉTATS DE FOCUS*/
+a:focus,
+button:focus,input:focus,
+select:focus,textarea:focus {
+    outline: 3px solid rgba(13, 110, 253, .3);
+    outline-offset: 3px;
+}
+
+/* Transition */
+
+.card,.about-card,
+.why-card,.partner-card,
+.pricing-card,.speaker-card,
+.testimonial-card,.info-card,
+.contact-card {
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+/* Images*/
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+img:hover {
+    transform: scale(1.02);
+}
+

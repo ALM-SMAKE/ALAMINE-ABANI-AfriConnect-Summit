@@ -340,3 +340,28 @@ if (jours && heures && minutes && secondes) {
     const interval = setInterval(mettreAJourCompteARebours, 1000);
 
 }
+
+// Dark mode//
+
+const darkModeBtn = document.getElementById("darkModeBtn");
+
+if (darkModeBtn) {
+
+    darkModeBtn.addEventListener("click", function () {
+
+        document.body.classList.toggle("dark");
+
+        localStorage.setItem(
+            "darkMode",
+            document.body.classList.contains("dark")
+        );
+
+    });
+
+    if (localStorage.getItem("darkMode") === "true") {
+
+        document.body.classList.add("dark");
+
+    }
+
+}
