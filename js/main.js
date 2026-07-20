@@ -1,53 +1,90 @@
 // bouton retour en haut//
 const topBtn = document.getElementById("topBtn");
 
-window.addEventListener("scroll", function () {
+if (topBtn) {
 
-    if (window.scrollY > 300) {
-        topBtn.style.display = "flex";
-    } else {
-        topBtn.style.display = "none";
-    }
+    window.addEventListener("scroll", function () {
 
-});
+        if (window.scrollY > 300) {
 
-topBtn.addEventListener("click", function () {
+            topBtn.style.display = "flex";
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+        } else {
+
+            topBtn.style.display = "none";
+
+        }
+
     });
 
-});
+    topBtn.addEventListener("click", function () {
+
+        window.scrollTo({
+
+            top: 0,
+
+            behavior: "smooth"
+
+        });
+
+    });
+
+}
 
 //Apparition des sections au défilement//
 
 const sections = document.querySelectorAll(".fade-up");
 
-window.addEventListener("scroll", function () {
+if (sections.length > 0) {
 
-    sections.forEach(function(section){
+    function afficherSections() {
 
-        const position = section.getBoundingClientRect().top;
+        sections.forEach(function (section) {
 
-        if(position < window.innerHeight - 100){
-            section.classList.add("show");
-        }
+            const position = section.getBoundingClientRect().top;
 
-    });
+            if (position < window.innerHeight - 100) {
 
-});
+                section.classList.add("show");
+
+            }
+
+        });
+
+    }
+
+    afficherSections();
+
+    window.addEventListener("scroll", afficherSections);
+
+}
 
 //Menu hamburger//
 
 const menu = document.querySelector(".menu");
 const menuBtn = document.querySelector(".menu-toggle");
 
-menuBtn.addEventListener("click", function(){
+if (menu && menuBtn) {
 
-    menu.classList.toggle("active");
+    menuBtn.addEventListener("click", function () {
 
-});
+        menu.classList.toggle("active");
+
+    });
+
+    const liens = document.querySelectorAll(".menu a");
+
+    liens.forEach(function (lien) {
+
+        lien.addEventListener("click", function () {
+
+            menu.classList.remove("active");
+
+        });
+
+    });
+
+}
 
 //Fermer le menu après un clic//
 
@@ -67,96 +104,112 @@ liens.forEach(function(lien){
 
 const loader = document.querySelector(".loader");
 
-window.addEventListener("load", function(){
+if (loader) {
 
-    setTimeout(function(){
+    window.addEventListener("load", function () {
 
-        loader.style.display = "none";
+        setTimeout(function () {
 
-    },400);
+            loader.style.display = "none";
 
-});
+        }, 400);
+
+    });
+
+}
 
 //formulaires//
 
 const form = document.getElementById("registrationForm");
 
-form.addEventListener("submit", function(e){
+if (form) {
 
-    e.preventDefault();
+    form.addEventListener("submit", function (e) {
 
-    let valide = true;
+        e.preventDefault();
 
-    document.querySelectorAll(".error").forEach(function(erreur){
+        let valide = true;
 
-        erreur.textContent = "";
+        document.querySelectorAll(".error").forEach(function (erreur) {
+
+            erreur.textContent = "";
+
+        });
+
+        const nom = document.getElementById("nom");
+        const prenom = document.getElementById("prenom");
+        const email = document.getElementById("email");
+        const telephone = document.getElementById("telephone");
+        const message = document.getElementById("message");
+
+        const emailValide = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (nom.value.trim() === "") {
+
+            nom.nextElementSibling.textContent =
+            "Veuillez saisir votre nom.";
+
+            valide = false;
+
+        }
+
+        if (prenom.value.trim() === "") {
+
+            prenom.nextElementSibling.textContent =
+            "Veuillez saisir votre prénom.";
+
+            valide = false;
+
+        }
+
+        if (email.value.trim() === "") {
+
+            email.nextElementSibling.textContent =
+            "Veuillez saisir votre email.";
+
+            valide = false;
+
+        }
+        else if (!emailValide.test(email.value)) {
+
+            email.nextElementSibling.textContent =
+            "Adresse email invalide.";
+
+            valide = false;
+
+        }
+
+        if (telephone.value.trim() === "") {
+
+            telephone.nextElementSibling.textContent =
+            "Veuillez saisir votre téléphone.";
+
+            valide = false;
+
+        }
+
+        if (message.value.trim().length < 20) {
+
+            message.nextElementSibling.textContent =
+            "Le message doit contenir au moins 20 caractères.";
+
+            valide = false;
+
+        }
+
+        if (valide) {
+
+            alert("Inscription enregistrée avec succès !");
+
+            form.reset();
+
+        }
 
     });
 
-    const nom = document.getElementById("nom");
-    const prenom = document.getElementById("prenom");
-    const email = document.getElementById("email");
-    const telephone = document.getElementById("telephone");
-    const message = document.getElementById("message");
+}
 
-    if(nom.value.trim() === ""){
-
-        nom.nextElementSibling.textContent = "Veuillez saisir votre nom.";
-
-        valide = false;
-
-    }
-
-    if(prenom.value.trim() === ""){
-
-        prenom.nextElementSibling.textContent = "Veuillez saisir votre prénom.";
-
-        valide = false;
-
-    }
-
-    if(email.value.trim() === ""){
-
-        email.nextElementSibling.textContent = "Veuillez saisir votre email.";
-
-        valide = false;
-
-    }
-    else if(!email.value.includes("@")){
-
-        email.nextElementSibling.textContent = "Adresse email invalide.";
-
-        valide = false;
-
-    }
-
-    if(telephone.value.trim() === ""){
-
-        telephone.nextElementSibling.textContent = "Veuillez saisir votre téléphone.";
-
-        valide = false;
-
-    }
-
-    if(message.value.trim().length < 20){
-
-        message.nextElementSibling.textContent =
-        "Le message doit contenir au moins 20 caractères.";
-
-        valide = false;
-
-    }
-
-    if(valide){
-
-        alert("Inscription enregistrée avec succès !");
-
-        form.reset();
-
-    }
-
-});
-
+//compteurs//
 let compteursLances = false;
 
 function compteur(id, fin) {
@@ -174,11 +227,14 @@ function compteur(id, fin) {
         debut += increment;
 
         if (debut >= fin) {
+
             debut = fin;
+
             clearInterval(interval);
+
         }
 
-        element.textContent = debut;
+        element.textContent = debut.toLocaleString();
 
     }, 20);
 
@@ -200,7 +256,7 @@ const stats = document.querySelector(".stats");
 
 if (stats) {
 
-    const observer = new IntersectionObserver(function (entries) {
+    const observer = new IntersectionObserver(function (entries, observer) {
 
         entries.forEach(function (entry) {
 
@@ -208,14 +264,79 @@ if (stats) {
 
                 lancerCompteurs();
 
+                observer.unobserve(entry.target);
+
             }
 
         });
 
     }, {
+
         threshold: 0.5
+
     });
 
     observer.observe(stats);
+
+}
+
+
+// compte a rebour//
+
+const jours = document.getElementById("jours");
+const heures = document.getElementById("heures");
+const minutes = document.getElementById("minutes");
+const secondes = document.getElementById("secondes");
+
+if (jours && heures && minutes && secondes) {
+
+    const dateEvenement = new Date("2026-10-15T09:00:00").getTime();
+
+    function mettreAJourCompteARebours() {
+
+        const maintenant = Date.now();
+
+        const difference = dateEvenement - maintenant;
+
+        if (difference <= 0) {
+
+            jours.textContent = "00";
+            heures.textContent = "00";
+            minutes.textContent = "00";
+            secondes.textContent = "00";
+
+            clearInterval(interval);
+
+            return;
+
+        }
+
+        const j = Math.floor(difference / (1000 * 60 * 60 * 24));
+
+        const h = Math.floor(
+            (difference % (1000 * 60 * 60 * 24)) /
+            (1000 * 60 * 60)
+        );
+
+        const m = Math.floor(
+            (difference % (1000 * 60 * 60)) /
+            (1000 * 60)
+        );
+
+        const s = Math.floor(
+            (difference % (1000 * 60)) /
+            1000
+        );
+
+        jours.textContent = String(j).padStart(2, "0");
+        heures.textContent = String(h).padStart(2, "0");
+        minutes.textContent = String(m).padStart(2, "0");
+        secondes.textContent = String(s).padStart(2, "0");
+
+    }
+
+    mettreAJourCompteARebours();
+
+    const interval = setInterval(mettreAJourCompteARebours, 1000);
 
 }
