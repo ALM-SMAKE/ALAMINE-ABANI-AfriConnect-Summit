@@ -61,12 +61,14 @@ if (sections.length > 0) {
 
 //Menu hamburger//
 
+// MENU HAMBURGER
+
 const menu = document.querySelector(".menu");
-const menuBtn = document.querySelector(".menu-toggle");
+const burgerBtn = document.getElementById("burgerBtn");
 
-if (menu && menuBtn) {
+if (menu && burgerBtn) {
 
-    menuBtn.addEventListener("click", function () {
+    burgerBtn.addEventListener("click", function () {
 
         menu.classList.toggle("active");
 
@@ -85,20 +87,6 @@ if (menu && menuBtn) {
     });
 
 }
-
-//Fermer le menu après un clic//
-
-const liens = document.querySelectorAll(".menu a");
-
-liens.forEach(function(lien){
-
-    lien.addEventListener("click", function(){
-
-        menu.classList.remove("active");
-
-    });
-
-});
 
 //chargement//
 

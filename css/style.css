@@ -1060,51 +1060,32 @@ body.dark .logos div, body.dark table, body.dark .location-info {
 
 /* RESPONSIVE 768 PX */
 
-@media (max-width: 768px) {
-    #burgerBtn {
-        display: block;
+@media (max-width:768px){
+
+    #burgerBtn{
+        display:block;
     }
-    .menu {
+
+    .menu{
         position: fixed;
-        top: 0;
+        top: 80px;
         right: -100%;
         width: 280px;
-        height: 100vh;
+        height: calc(100vh - 80px);
         background: var(--white);
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        gap: 35px;
-        transition: var(--transition);
-        z-index: 1001;
+        align-items: center;
+        gap: 30px;
+        padding-top: 40px;
+        transition: .3s;
+        z-index: 999;
     }
-    .menu.open {
+
+    .menu.active{
         right: 0;
     }
-    .footer-container {
-        grid-template-columns: 1fr;
-    }
-    .pricing-grid {
-        grid-template-columns: 1fr;
-    }
-    .partners-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .info-grid, .contact-grid, .venue-grid, .highlights-grid, .why-grid,
-    .benefits-grid, .about-content, .objectifs-grid, .stats-grid,
-    .themes-grid, .testimonial-grid, .faq-grid, .faq-container,
-    .startup-grid, .speakers-grid, .timeline, .location-grid {
-        grid-template-columns: 1fr;
-    }
-    .newsletter-form {
-        flex-direction: column;
-    }
-    .call-buttons, .cta-buttons, .form-buttons {
-        flex-direction: column;
-    }
-    .hero-image img {
-        height: 280px;
-    }
+
 }
 
 /* RESPONSIVE 576 PX */
@@ -1212,3 +1193,43 @@ img:hover {
     transform: scale(1.02);
 }
 
+/* BOUTONS DE FILTRAGE*/
+
+.filter-buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin:50px 0;
+}
+
+.filter-btn{
+    padding:14px 28px;
+    border:2px solid var(--primary);
+    border-radius:40px;
+    background:var(--white);
+    color:var(--primary);
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:all .35s ease;
+    box-shadow:0 6px 15px rgba(0,0,0,.08);
+}
+
+.filter-btn:hover{
+    background:var(--primary);
+    color:var(--white);
+    transform:translateY(-4px);
+    box-shadow:0 12px 25px rgba(13,110,253,.25);
+}
+
+.filter-btn.active{
+    background:var(--primary);
+    color:var(--white);
+    box-shadow:0 12px 25px rgba(13,110,253,.35);
+}
+
+.filter-btn:focus{
+    outline:none;
+}
